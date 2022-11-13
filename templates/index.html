@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Link2Bio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create a page to promote who you are and what you do.">
+<meta name="keywords" content="Link2Bio, BioLink, Insta Bio Link tool,Linktree">
+<meta name="author" content="Link2Bio">
+ 
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+<link rel="icon" href="{{url_for('static', filename='favicon.png')}}" type="image/png" sizes="40x40"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Karla:wght@500&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+body{
+margin-top:30px;
+#background:linear-gradient(39deg, #4cb8c4, #3cd3ad);
+background:linear-gradient(316deg,#f735a2, #456dc5,#30d8fb);
+}
+h1,h6{
+color:white;
+}
+button{
+padding:10px;
+border-radius:10px;
+}
+a{
+text-decoration:none;
+}
+
+</style>
+</head>
+<body>
+<center>
+<img src="{{url_for('static', filename='link.png')}}" style="width:100px;">
+
+<h1 style="font-family: 'Dela Gothic One', cursive;"><b>Link2Bio </b></h1>
+<h6 style="font-family: 'Montserrat', sans-serif;"><b>One Link for all your multiple links.</b><br>
+Create a BioLink page for FREE.<br>
+&#128071;&#128071; </h6>
+<a href="/create">
+<button class="w3-btn" style="background-color:#263238;color:white;backdrop-filter:blur(10px);box-shadow:-3px 5px 20px 0 rgb(19 19 19 / 60%);font-family: 'Karla', sans-serif; ">GET STARTED FOR FREE  &#128293;</button>
+</a>
+<br><br>
+<a href="/login">
+<button class="w3-btn" style="background-color:#edf2f280;color:white;backdrop-filter:blur(10px);box-shadow:-3px 5px 50px 0 rgb(0 0 0 / 60%);font-family: 'Karla', sans-serif;"> Already on Link2Bio? LOGIN</button>
+</a><br>
+<img src="{{url_for('static', filename='mockup.png')}}" style="width:300px;margin-top:20px;">
+<footer class="w3-bar w3-white w3-bottom" style="padding:10px;font-family: 'Karla', sans-serif;">
+ Made with &#10084;&#65039; by Anurag Prasoon
+</footer>
+</body>  
+
+</html>

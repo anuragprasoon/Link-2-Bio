@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>{{user.username}}'s Link2Bio Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+<link rel="icon" href="{{url_for('static', filename='favicon.png')}}" type="image/png" sizes="40x40"> 
+<script src="https://kit.fontawesome.com/55f866f4d5.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+body{
+margin-top:50px;
+#background:linear-gradient(39deg, #4cb8c4, #3cd3ad);
+background:linear-gradient(316deg,#f735a2, #456dc5,#30d8fb);
+color:white;
+}
+h4,h6{
+color:white;
+font-family: 'Karla', sans-serif;
+}
+button{
+padding:10px;
+border-radius:10px;
+font-family: 'Karla', sans-serif;
+}
+.btn{
+background-color:#edf2f280;
+color:white;
+padding:10px;
+}
+a{
+text-decoration:none;
+}
+.card{
+padding:10px;
+width:320px;
+border-radius:10px;
+background:linear-gradient(to right bottom,rgba(255,255,255,0.5),rgba(255,255,255,0.2));
+box-shadow: 0 8px 32px 0 rgba( 255,255,255,0.75 );
+margin-bottom:30px;
+}
+.scroll {
+  height:90%;
+  overflow-y: scroll; 
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.footer{
+width:320px;
+margin-bottom:0px;
+color:black;
+padding:10px;
+border-radius:0 0 10px 10px;
+background:linear-gradient(to right bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.7));
+box-shadow: 0 8px 32px 0 rgba( 255,255,255,0.75 );
+}
+</style>
+</head>
+<body onload="check()">
+<center>
+<div class="w3-card card">
+<img src="{{user.dp}}" class="w3-circle" style="width:100px;height:100px;margin-top:20px;" id="dp">
+<h4 style="width:300px;"><b>@{{user.username}}</b></h4>
+<h6 style="width:280px;margin-top:-5px;">{{user.about}}</h6>
+<div class="" style=";color:white;">
+<a href="http://instagram.com/" id="ig"><i class="fab fa-instagram-square fa-3x"></i></a>
+<a href="" id="yt"><i class="fab fa-youtube-square fa-3x"></i></a>
+<a href="http://twitter.com/" id="tw"><i class="fab fa-twitter-square fa-3x"></i></a>
+<a href="mailto:{{user.email}}"><i class="fas fa-envelope-square fa-3x"></i></a>
+<a href="http://fb.me/" id="fb"><i class="fab fa-facebook-square fa-3x"></i></a>
+</div>
+<br>
+ {% for link in link %}
+ <a href="{{link.link}}" target="_blank">
+ <button class="w3-btn btn" style="width:280px;margin-bottom:15px;">{{link.title}}</button></a><br>
+ {% endfor %}
+<h6 style="margin-bottom:10px;">made with <a href="/" style="text-decoration:none;">Link2Bio</a> &#10084;&#65039;</h6>
+</div>
+<footer class="w3-bottom" style="margin-bottom:25px;display:none;">
+  <h6 class="footer">Made with Link2Bio &#10084;&#65039; </h6>
+</footer>
+<script>
+  function check(){
+  var ig =  document.getElementById("ig");
+  var fb =  document.getElementById("fb");
+  var yt =  document.getElementById("yt");
+  var tw =  document.getElementById("tw");
+  var dp =  document.getElementById("dp");
+  var igl= "{{user.ig}}";
+  var fbl= "{{user.fb}}";
+  var twl= "{{user.tw}}";
+  var ytl ="{{user.yt}}"
+  var dpl ="{{user.dp}}"
+  if (fbl==""||fbl=="None"){
+  fb.style.display="none";
+  }else{
+  fb.href=fb.href+fbl
+  }
+  if (igl==""||igl=="None"){
+  ig.style.display="none";
+  }else{
+  ig.href=ig.href+igl
+  }
+  if (twl==""||twl=="None"){
+  tw.style.display="none";
+  }else{
+  tw.href=tw.href+twl
+  }
+  if (ytl==""||ytl=="None"){
+  yt.style.display="none";
+  }else{
+  yt.href=ytl
+  }
+  if(dpl==""||dpl=="None"){
+  dp.src="{{url_for('static', filename='profilepic.jpg')}}";
+  }
+  }
+  </script>
+</body>  
+</html>

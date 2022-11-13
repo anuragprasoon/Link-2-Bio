@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>BioLink 2.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+<link rel="icon" href="{{url_for('static', filename='favicon.png')}}" type="image/png" sizes="40x40"> 
+<meta name="description" content="Create Biolinks for free">
+<meta name="keywords" content="Linktree, LinkinBio,Link2Bio,Biolink">
+<meta name="author" content="Anurag Prasoon">
+<style>
+body{
+margin-top:50px;
+background:linear-gradient(39deg, #4cb8c4, #3cd3ad);
+}
+h1,h5{
+color:white;
+}
+button{
+padding:10px;
+border-radius:10px;
+}
+a{
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+<center>
+<img style="width:100px;" src="{{url_for('static',filename='link.png')}}">
+<h1><b><i>Link2Bio.ml</i></b></h1>
+<h5><b>One Link for all your multiple links.</b><br>
+Create a Link2Bio page for FREE.<br>
+&#128071;&#128071; </h5>
+<a href="/create">
+<button class="w3-btn" style="background-color:#263238;color:white;">GET STARTED FOR FREE &#128293;</button>
+</a>
+<br><br>
+<a href="/login">
+<button class="w3-btn" style="background-color:#00897b80;color:white"> Already on Link2Bio? LOGIN</button>
+</a><br>
+<img style="width:300px;margin-top:36px;" src="{{url_for('static',filename='mockup.png')}}" >
+<footer class="w3-bar w3-white w3-bottom">
+<h4> Made with &#10084;&#65039; by Anurag Prasoon</h4>
+</footer>
+</body>  
+
+</html>

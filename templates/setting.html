@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Edit Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+<link rel="icon" href="{{url_for('static', filename='favicon.png')}}" type="image/png" sizes="40x40"> 
+<style>
+body{
+background:linear-gradient(316deg,#f735a2, #456dc5,#30d8fb);
+#background:linear-gradient(39deg, #4cb8c4, #3cd3ad);
+color:white;
+}
+h1,h5{
+color:white;
+}
+button{
+padding:10px;
+border-radius:10px;
+}
+a{
+text-decoration:none;
+}
+.card{
+width:320px;
+padding:10px;
+margin-top:80px;
+margin-bottom:100px;
+border-radius:10px;
+background:linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.2));
+backdrop-filter:blur(10px);
+box-shadow: 0 8px 32px 0 rgba( 255,255,255, 0.75 );
+}
+.input{
+width:78%;
+border-radius:10px;
+background:linear-gradient(to right bottom,#f7fcfc,#ebf1f08c);
+backdrop-filter:blur(10px);
+border:none;
+padding:10px;
+margin-top:10px;
+}
+.input::placeholder{
+color:#655f5fb8;
+}
+.button{
+#background:linear-gradient(182deg, #f44336ab, #ff0000);
+backdrop-filter:blur(20px);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.10 );
+margin-bottom:10px;
+margin-top:10px;
+background:linear-gradient(359deg, #00000087, #000000);
+}
+.inputfile::file-selector-button{
+border-radius:10px;
+border:none;
+padding:10px;
+background:linear-gradient(to right bottom,#f7fcfc,#ebf1f08c);
+}
+.file{
+width:78%;
+border-radius:10px;
+background: linear-gradient(to right bottom,#f7fcfc4a,#ebf1f042);
+backdrop-filter:blur(10px);
+border:none;
+margin-top:10px;
+}
+
+
+</style>
+</head>
+<body>
+<center>
+<div class="w3-card card" style="">
+<h3>Edit Your Social links</h3>
+<form method="POST" action="/setting">
+<div style="padding:5px;">
+<font class="w3-left" style="margin-left:40px;margin-bottom:-10px;">Insta Username</font>
+<input class="input" placeholder="Insta Username (Optional)" name="ig"  pattern="[A-Za-z0-9._]{2,}" oninvalid="confirm()" type="text" value="{{user.ig}}">
+</div>
+<div style="padding:5px;">
+<font class="w3-left" style="margin-left:40px;margin-bottom:-10px;">Twitter Username</font>
+<input class="input" placeholder="Twitter Username (Optional)" name="tw"  pattern="[A-Za-z0-9._]{2,}" oninvalid="confirm()" type="text" value="{{user.tw}}">
+</div>
+<div style="padding:5px;">
+<font class="w3-left" style="margin-left:40px;margin-bottom:-10px;">YT Channel link</font>
+<input class="input" placeholder="YT Channel Link (Optional)" name="yt"  type="URL" value="{{user.yt}}">
+</div>
+<div style="padding:5px;">
+<font class="w3-left" style="margin-left:40px;margin-bottom:-10px;">Fb Username</font>
+<input class="input" placeholder="FB Username (Optional)" name="fb"  pattern="[A-Za-z0-9._]{2,}" oninvalid="confirm()" type="TEXT" value="{{user.fb}}" >
+</div><button type="submit" class="w3-btn button" style="" id="sign">Save</button>
+</form>
+
+</div>
+<script>
+function preimg(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('img');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+function imgpre(){
+var h=document.getElementById('dp').value;
+console.log(h);
+document.getElementById('img').src=h;
+}
+function confirm(){
+alert("You are entering Invalid Usernames. Don't enter @ in Username fields, in case you are using.");
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>BioLink 2.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+<link rel="icon" href="{{url_for('static', filename='favicon.png')}}" type="image/png" sizes="40x40"> 
+<style>
+body{
+background:linear-gradient(316deg,#f735a2, #456dc5,#30d8fb);
+#background:linear-gradient(39deg, #4cb8c4, #3cd3ad);
+color:white;
+}
+h1,h5{
+color:white;
+}
+button{
+padding:10px;
+border-radius:10px;
+}
+a{
+text-decoration:none;
+}
+.card{
+width:300px;
+padding:10px;
+margin-top:200px;
+border-radius:10px;
+background:linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.2));
+backdrop-filter:blur(10px);
+box-shadow: 0 5px 32px 0 rgba( 255,255,255,0.75 );
+}
+.input{
+width:50%;
+border-radius:0px 10px 10px 0px;
+background:linear-gradient(to right bottom,#f7fcfc,#ebf1f08c);
+backdrop-filter:blur(10px);
+border:none;
+padding:10px;
+}
+.input::placeholder{
+color:#655f5fb8;
+}
+.input2{
+width:110px;
+border-radius:10px 0px 0px 10px;
+#background:linear-gradient(to right bottom,#f7fcfc,#ebf1f08c);
+backdrop-filter:blur(10px);
+#background:linear-gradient(359deg,#00000087, #000000);
+border:none;
+padding:10px;
+color:#263238;
+}
+.button{
+background:linear-gradient(359deg, #00000087, #000000);
+backdrop-filter:blur(20px);
+box-shadow:0 8px 32px 0 rgba( 31, 38, 135, 0.10 );
+margin-bottom:0px;
+#background-color:black;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="w3-card card" style="">
+<h3>Choose a username</h3>
+<form id="username" method="POST" action="/create">
+<input class="input2" value="link2bio.ml/" disabled><input class="input" id="user" pattern="[A-Za-z0-9._]{2,}" placeholder=" username" oninvalid="confirm()" name="username" required>
+<br><div style="font-size:12px;color:red;" id="msg">{{msg}}</div><br>
+<button type="submit"class="w3-btn button"onclick="">Next</button>
+</form>
+</div>
+<script>
+function check(){
+n=document.getElementById('user').value;
+if(n.search(" ")>=0){
+document.getElementById('msg').innerHTML= "Only letters, no.s & \".\" or \"_\" are allowed.";
+}else{
+console.log("submit");
+document.getElementById('username').submit();
+}
+}
+function confirm(){
+document.getElementById('msg').innerHTML= "Only letters, no.s & \".\" or \"_\" are allowed.";
+}
+</script>
+</body>
+</html>

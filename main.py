@@ -8,12 +8,12 @@ import cloudinary.api
 app = Flask(__name__)
 app.config["DEBUG"] = True
 app.secret_key = "hello"
-SQLALCHEMY_DATABASE_URI = "postgresql://vakeojvqdsptzf:6fe2862c4d3fea19847aa4fdb27226e784429e0aea8545865d6f948238407cef@ec2-52-211-144-45.eu-west-1.compute.amazonaws.com:5432/dapq1eaqrh5r54"
+SQLALCHEMY_DATABASE_URI = "URI"
 #app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://vakeojvqdsptzf:6fe2862c4d3fea19847aa4fdb27226e784429e0aea8545865d6f948238407cef@ec2-52-211-144-45.eu-west-1.compute.amazonaws.com:5432/dapq1eaqrh5r54"
+app.config["SQLALCHEMY_DATABASE_URI"] = "URI"
 #app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-cloudinary.config(cloud_name = "anuragprasoon", api_key = "329238429141563", api_secret = "1HBWulXUHKsfjFiu6mZcahXyrb4")
+cloudinary.config(cloud_name = "USERNAME", api_key = "API KEY", api_secret = "API SECRET")
 db = SQLAlchemy(app)
 
 class users(db.Model):
